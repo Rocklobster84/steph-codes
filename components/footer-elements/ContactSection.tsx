@@ -11,7 +11,7 @@ export const ContactSection = () => {
       <div className="flex flex-col grow shrink-0 items-center md:items-start my-auto basis-0 w-fit pl-10">
         <h4>Get in Touch</h4>
         <div className="mt-6">
-          <a href="mailto:you@example.com">steph@stephcodes.dev</a>
+          <a href="mailto:steph@stephcodes.dev">steph@stephcodes.dev</a>
         </div>
         <div className="mt-6">
           <a href="tel:+18175219221">+1 817-521-9221</a>
