@@ -11,17 +11,17 @@ export const ContactSection = () => {
       <div className="flex flex-col grow shrink-0 items-center md:items-start my-auto basis-0 w-fit pl-10">
         <h4>Get in Touch</h4>
         <div className="mt-6">
-          steph@stephcodes.dev
+          <a href="mailto:you@example.com">steph@stephcodes.dev</a>
         </div>
         <div className="mt-6">
-          +1 817-521-9221
+          <a href="tel:+18175219221">+1 817-521-9221</a>
         </div>
         <div className="flex gap-8 my-auto mt-6">
-        <FaGithub />
+        <a href="https://github.com/Rocklobster84" target="_blank"><FaGithub /></a>
 
-        <FaInstagram />
+        <a href="https://www.instagram.com/rocklobster1984/" target="_blank"><FaInstagram /></a>
 
-        <FaLinkedin />
+        <a href="https://www.linkedin.com/in/stephthomp/" target="_blank"><FaLinkedin /></a>
       </div>
       </div>
 
