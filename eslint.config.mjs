@@ -14,6 +14,7 @@ const eslintConfig = [
   {
     rules: {
       "@typescript-eslint/no-empty-interface": "off",
+      "import/named": "off",
     },
   },
 ];
