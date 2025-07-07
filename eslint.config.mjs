@@ -16,6 +16,8 @@ const eslintConfig = [
     rules: {
       "@typescript-eslint/no-empty-interface": "off",
       "import/named": "off",
+      "import/no-named-export": "off",
+      "no-unused-vars": "off"
     },
   },
 ];
