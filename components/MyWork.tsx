@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import CustomButton from "./CustomButton";
+import { Project, User } from "../sanity.types"
 
+export type MyWorkType = Omit<Project, "user"> & { user?: User };
 
 const MyWork = ({ projectPost }: { projectPost: MyWorkType}) => {
 
-  const { _id, description, image, title } = projectPost;
+const { _id, description, image, title } = projectPost;
 
   return (
     <div className="flex flex-col mx-auto max-w-3/4 sm:max-w-3/4 md:max-w-3/4 lg:max-w-2/3">

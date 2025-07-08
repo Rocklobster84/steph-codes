@@ -1,19 +1,11 @@
-import { Hero, MyWork, Experience, About, HireMe } from "@/components";
-/*import { client } from "@/sanity/lib/client";
-import { PROJECTS_QUERY } from "@/sanity/lib/queries";*/
+import { Hero, Experience, About, HireMe } from "@/components";
+import MyWork, { MyWorkType } from '@/components/MyWork';
+import { client } from "@/sanity/lib/client";
+import { PROJECTS_QUERY } from "@/sanity/lib/queries";
 
-export default function Home() {
+export default async function Home() {
 
-  /*const projectPosts = await client.fetch(PROJECTS_QUERY);*/
-
-  const projectPosts = [{
-    _createdAt: new Date(),
-    user: {_id: 1 },
-    description: "This is a description", 
-    image: "https://github.com/Rocklobster84/StephCodesStatic/blob/main/images/bb63-salon.png?raw=true",
-    category: "Website",
-    title: "BB63 Salon"
-  }];
+  const projectPosts = await client.fetch<MyWorkType[]>(PROJECTS_QUERY);
 
   return (
     <main className="overflow-hidden">
@@ -22,7 +14,7 @@ export default function Home() {
       <section>
         
           {projectPosts?.length > 0 ? (
-            projectPosts.map((projectPost: MyWorkType ) => (
+            projectPosts.map(( projectPost: MyWorkType ) => (
               <MyWork key={projectPost?._id} projectPost={projectPost} />
             ))
           ) : (
