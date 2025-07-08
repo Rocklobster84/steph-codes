@@ -7,7 +7,7 @@ import CustomButton from "./CustomButton";
 
 const MyWork = ({ projectPost }: { projectPost: MyWorkType}) => {
 
-  const { _createdAt, _id, user, description, image, category, title } = projectPost;
+  const { _id, description, image, title } = projectPost;
 
   return (
     <div className="flex flex-col mx-auto max-w-3/4 sm:max-w-3/4 md:max-w-3/4 lg:max-w-2/3">

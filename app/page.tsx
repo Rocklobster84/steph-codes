@@ -22,7 +22,7 @@ export default function Home() {
       <section>
         
           {projectPosts?.length > 0 ? (
-            projectPosts.map((projectPost: MyWorkType, index: number) => (
+            projectPosts.map((projectPost: MyWorkType ) => (
               <MyWork key={projectPost?._id} projectPost={projectPost} />
             ))
           ) : (
