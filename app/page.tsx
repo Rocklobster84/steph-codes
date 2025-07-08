@@ -1,16 +1,16 @@
-import { Hero, Experience, About, HireMe } from "@/components";
+import { Hero, MyWorkHeading, Experience, About, HireMe } from "@/components";
 import MyWork, { MyWorkType } from '@/components/MyWork';
-import { client } from "@/sanity/lib/client";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 export default async function Home() {
 
-  const projectPosts = await client.fetch<MyWorkType[]>(PROJECTS_QUERY);
+  const { data: projectPosts } = await sanityFetch({ query: PROJECTS_QUERY });
 
   return (
     <main className="overflow-hidden">
       <Hero />
-
+      <MyWorkHeading />
       <section>
         
           {projectPosts?.length > 0 ? (
@@ -22,6 +22,8 @@ export default async function Home() {
           )}
         
       </section>
+
+      <SanityLive />
 
       <Experience />
       <About />

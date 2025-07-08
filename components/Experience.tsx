@@ -9,7 +9,7 @@ const Experience = () => {
 
   return (
     <>
-    <div className="flex flex-col mx-auto max-w-3/4 sm:max-w-3/4 md:max-w-3/4 lg:max-w-2/3 mb-20">
+    <div className="flex flex-col mx-auto max-w-3/4 sm:max-w-3/4 md:max-w-3/4 lg:max-w-2/3 mb-20 mt-16">
       <div className="shrink-0 self-end max-w-full h-0 border-white border-solid border-[1px] w-full sm:px" />
       <div className="flex flex-nowrap gap-5 justify-between w-full max-md:max-w-full">
         <div className="flex flex-col max-md:max-w-full">
