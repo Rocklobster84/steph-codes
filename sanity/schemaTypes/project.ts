@@ -32,7 +32,8 @@ export const project = defineType ({
     }),
     defineField({
       name: 'copy',
-      type: 'text',
+      type: 'markdown',
+
     }),
     defineField({
       name: 'image',
