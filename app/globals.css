@@ -20,6 +20,10 @@
   --color-light: #0F1213;
   --color-accent: #9F8F38;
   --color-accent-hover: #6e6325;
+  --color-accent-dark: #4B4737;
+  --color-accent-light: #b1ab99;
+  --color-accent-teal: #00a396;
+  --color-accent-tealdk: #006e63;
   --color-form: #1c1a1a;
 }
 
@@ -32,6 +36,31 @@
   }
   h3 {
     @apply text-2xl md:text-4xl;
+  }
+}
+
+@layer utilities {
+  .heading {
+    @apply inline-block uppercase bg-black px-6 py-3 font-bold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] text-center align-middle my-5;
+  }
+  .sub-heading {
+    @apply font-medium text-[20px] text-black max-w-2xl text-center break-words;
+  }
+  .tag {
+    @apply bg-accent-dark px-6 py-3 font-bold rounded-sm uppercase relative before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+  }
+  .section_container {
+    @apply px-6 py-10 max-w-7xl mx-auto;
+  }
+  .category-tag {
+    @apply font-medium text-[16px] bg-accent-light text-black px-4 py-2 rounded-full;
+  }
+  .skeleton {
+    @apply bg-gray-200 rounded-md animate-pulse; 
+  }
+
+  .skeleton.circle {
+    @apply rounded-full; 
   }
 }
 
@@ -59,3 +88,4 @@ ul {
   padding: 0;
   margin: 0;
 }
+

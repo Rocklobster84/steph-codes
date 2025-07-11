@@ -170,9 +170,12 @@ export type AllSanitySchemaTypes = Project | User | Markdown | SanityImagePalett
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {  _id,   title,   slug,   _createdAt,   user,   description,   category,   copy,  image}
+// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc)[0...3] {  _id,   _type,  _updatedAt,  _rev,  title,   slug,   _createdAt,   user,   description,   category,   copy,  image}
 export type PROJECTS_QUERYResult = Array<{
   _id: string;
+  _type: "project";
+  _updatedAt: string;
+  _rev: string;
   title: string | null;
   slug: Slug | null;
   _createdAt: string;
@@ -187,11 +190,30 @@ export type PROJECTS_QUERYResult = Array<{
   copy: string | null;
   image: string | null;
 }>;
+// Variable: PROJECT_BY_ID_QUERY
+// Query: *[_type == "project" && _id == $id][0] {  _id,   title,   slug,   _createdAt,   user,   description,   category,   image,  copy}
+export type PROJECT_BY_ID_QUERYResult = {
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  _createdAt: string;
+  user: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "user";
+  } | null;
+  description: string | null;
+  category: string | null;
+  image: string | null;
+  copy: string | null;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"project\" && defined(slug.current)] | order(_createdAt desc) {\n  _id, \n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image\n}": PROJECTS_QUERYResult;
+    "*[_type == \"project\" && defined(slug.current)] | order(_createdAt desc)[0...3] {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image\n}": PROJECTS_QUERYResult;
+    "*[_type == \"project\" && _id == $id][0] {\n  _id, \n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  image,\n  copy\n}": PROJECT_BY_ID_QUERYResult;
   }
 }
