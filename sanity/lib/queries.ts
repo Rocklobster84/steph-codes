@@ -14,3 +14,15 @@ export const PROJECTS_QUERY = defineQuery(`*[_type == "project" && defined(slug.
   copy,
   image
 }`);
+
+export const PROJECT_BY_ID_QUERY = defineQuery(`*[_type == "project" && _id == $id][0] {
+  _id, 
+  title, 
+  slug, 
+  _createdAt, 
+  user, 
+  description, 
+  category, 
+  image,
+  copy
+}`)

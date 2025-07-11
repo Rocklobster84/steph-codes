@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { HiArrowNarrowRight } from "react-icons/hi";
 import CustomButton from "./CustomButton";
 import { Project, User } from "../sanity.types"
 
