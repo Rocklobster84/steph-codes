@@ -12,25 +12,27 @@ export default function Navbar() {
     <header className="px-5 py-3 bg-neutral-900 shadow-md ">
       <nav className="px-10">
         <div className="h-8 items-center flex justify-between">
-          <div className="text-xl text-white font-bold px-5 uppercase">Steph Codes</div>
+          <div className="text-xl text-white font-bold px-5 uppercase"><Link href="/">Steph Codes</Link></div>
           <div className="hidden sm:block">
           <Link href="/">
             <span className="px-5">Home</span>
           </Link>
-          <Link href="/">
+          <Link href="/#my-work">
             <span className="px-5">My Work</span>
           </Link>
-          <Link href="/">
+          <Link href="/#experience">
             <span className="px-5">Experience</span>
           </Link>
-          <Link href="/">
+          <Link href="/#about">
             <span className="px-5">About</span>
           </Link>
-          <CustomButton
-            title="Hire Me"
-            btnType="button"
-            containerStyles="text-white rounded-sm bg-neutral-500 min-w-[130px]"
-          />
+          <Link href="/#hire-me">
+            <CustomButton
+              title="Hire Me"
+              btnType="button"
+              containerStyles="text-white rounded-sm bg-neutral-500 min-w-[130px]"
+            />
+          </Link>
           </div>
           <button onClick={() => setIsOpen(!isOpen)} className="block sm:hidden px-4 text-2xl"><CiMenuBurger /></button>
         </div>
