@@ -13,6 +13,16 @@
  */
 
 // Source: schema.json
+export type Playlist = {
+  _id: string;
+  _type: "playlist";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+};
+
 export type Project = {
   _id: string;
   _type: "project";
@@ -166,7 +176,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = Project | User | Markdown | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = Playlist | Project | User | Markdown | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: PROJECTS_QUERY
@@ -208,6 +218,14 @@ export type PROJECT_BY_ID_QUERYResult = {
   image: string | null;
   copy: string | null;
 } | null;
+// Variable: PLAYLIST_BY_SLUG_QUERY
+// Query: *[_type == "playlist" && slug.current == $slug][0]{  _id,  title,  slug,  select[]->{    _id,    _createdAt,    title,    slug,    views,    description,    category,    image,  }}
+export type PLAYLIST_BY_SLUG_QUERYResult = {
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  select: null;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
@@ -215,5 +233,6 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"project\" && defined(slug.current)] | order(_createdAt desc)[0...3] {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image\n}": PROJECTS_QUERYResult;
     "*[_type == \"project\" && _id == $id][0] {\n  _id, \n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  image,\n  copy\n}": PROJECT_BY_ID_QUERYResult;
+    "*[_type == \"playlist\" && slug.current == $slug][0]{\n  _id,\n  title,\n  slug,\n  select[]->{\n    _id,\n    _createdAt,\n    title,\n    slug,\n    views,\n    description,\n    category,\n    image,\n  }\n}": PLAYLIST_BY_SLUG_QUERYResult;
   }
 }
