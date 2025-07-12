@@ -1,22 +1,30 @@
   export const events = [
     {
-      heading: "Event 1",
-      subHeading: "Started project",
+      heading: "Progress Chef",
+      subHeading: "Professional Services Consultant",
+      dates: "MARCH 2022 - NOVEMBER 2023",
+      description: "During my time at Progress, I worked with Chef Software DevOps and Automation tools as a consultant focusing on helping organizations implement and optimize their use of Chef products and services.",
       direction: "left"
     },
     {
-      heading: "Event 2",
-      subHeading: "First Milestone Achieved",
+      heading: "Cadence Design Systems",
+      subHeading: "Sr. Systems Administrator",
+      dates: "APRIL 2021 - JANUARY 2022",
+      description: "Cadence Design Systems acquired Pointwise, Inc. in April 2021. I was offered a 9-month transitional contract to assist with migrating systems and data.",
       direction: "right"
     },
     {
-      heading: "Event 3",
-      subHeading: "Project Expansion",
+      heading: "Pointwise, Inc.",
+      subHeading: "Senior Full Stack Developer",
+      dates: "FEBRUARY 2015 - APRIL 2021",
+      description: "I was brought into Pointwise to transform their web presence and improve their system for posting content and deployment. As a team of one, I worked closely with the marketing and IT departments to design and build out a more efficient set of processes.",
       direction: "left"
     },
     {
-      heading: "Event 4",
-      subHeading: "New Partners Joined",
+      heading: "c-Systems Software",
+      subHeading: "Marketing Communications Coordinator",
+      dates: "JANUARY 2014 - FEBRUARY 2015",
+      description: "I managed the company website using HTML, CSS, JavaScript, and ASP.NET, and supported marketing efforts through copywriting, graphic design, and animation. I created content for blogs, social media, email campaigns, and newsletters; designed promotional materials; and set up and utilized HubSpot for various marketing communications.",
       direction: "right"
     },
   ]

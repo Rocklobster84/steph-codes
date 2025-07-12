@@ -12,6 +12,8 @@ export interface CustomButtonProps {
 export interface ExperienceProps {
     heading: string;
     subHeading: string;
+    dates: string;
+    description: string;
     direction: string;
 }
 

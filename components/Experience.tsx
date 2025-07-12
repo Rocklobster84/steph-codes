@@ -32,7 +32,7 @@ const Experience = () => {
       
 
 
-      <div className="flex flex-col gap-y-3 w-full my-4 mb-16">
+      <div className="flex flex-col gap-y-3 mx-auto w-full my-4 mb-16 md:max-w-3/4">
         <Circle />
 
           {events.map((event, key) => {
