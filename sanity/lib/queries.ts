@@ -37,6 +37,13 @@ export const PLAYLIST_BY_SLUG_QUERY =
     _createdAt,
     title,
     slug,
+    user->{
+      _id,
+      name,
+      slug,
+      image,
+      bio
+    },
     views,
     description,
     category,
