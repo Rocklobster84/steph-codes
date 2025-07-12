@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import { formatDate } from '@/utils';
 import { Suspense } from 'react';
 import Skeleton from '@/components/ui/Skeleton';
-import MyWork, { MyWorkType } from '@/components/MyWork';
+import { MyWorkType } from '@/components/MyWork';
+import YouMayAlsoLike from '@/components/YouMayAlsoLike'
 
 export const experimental_ppr = true;
 
@@ -31,17 +32,25 @@ const Page = async ({ params }: { params: Promise<{ id: string }>}) => {
     </section>
 
     <section className="section_container w-3/4">
+
+      <img
+        src={projectPost.image}
+        alt={projectPost.title}
+        className="w-full h-auto rounded-xl"
+      />
     
       <h3 className="pt-10">Project Details</h3>
       <article className="pt-10 pb-10 prose break-all">{projectPost.copy}</article>
 
+      <hr className="divider" />
+
       {Websites?.length > 0 && (
         <div className="max-w-4xl mx-auto">
-          <p className="text-30-semibold">You May Also Like</p>
+          <h3 className="mt-12">You May Also Like</h3>
 
           <ul className="mt-7 card_grid-sm">
             {Websites.map((projectPost: MyWorkType, i: number) => (
-              <MyWork key={i} projectPost={projectPost} />
+              <YouMayAlsoLike key={i} projectPost={projectPost} />
           ))}
           </ul>
         </div> 
