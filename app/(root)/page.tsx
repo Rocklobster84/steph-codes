@@ -10,8 +10,8 @@ export default async function Home() {
   return (
     <main className="overflow-hidden">
       <Hero />
+      <section id="my-work">
       <MyWorkHeading />
-      <section>
         
           {projectPosts?.length > 0 ? (
             projectPosts.map(( projectPost: MyWorkType ) => (
@@ -22,7 +22,6 @@ export default async function Home() {
           )}
         
       </section>
-
       <SanityLive />
 
       <Experience />

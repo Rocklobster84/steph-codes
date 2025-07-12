@@ -46,7 +46,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }>}) => {
 
       {Websites?.length > 0 && (
         <div className="max-w-4xl mx-auto">
-          <h3 className="mt-12">You May Also Like</h3>
+          <h3 className="mt-12 mb-12">You May Also Like</h3>
 
           <ul className="mt-7 card_grid-sm">
             {Websites.map((projectPost: MyWorkType, i: number) => (
