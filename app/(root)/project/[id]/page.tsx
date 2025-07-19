@@ -5,7 +5,8 @@ import { formatDate } from '@/utils';
 import { Suspense } from 'react';
 import Skeleton from '@/components/ui/Skeleton';
 import { MyWorkType } from '@/components/MyWork';
-import YouMayAlsoLike from '@/components/YouMayAlsoLike'
+import Markdown from 'react-markdown';
+import YouMayAlsoLike from '@/components/YouMayAlsoLike';
 
 export const experimental_ppr = true;
 
@@ -39,8 +40,9 @@ const Page = async ({ params }: { params: Promise<{ id: string }>}) => {
         className="w-full h-auto rounded-xl"
       />
     
-      <h3 className="pt-10">Project Details</h3>
-      <article className="pt-10 pb-10 prose break-all">{projectPost.copy}</article>
+      <h3 className="pt-10 pb-10">Project Details</h3>
+      <Markdown>{projectPost.copy}</Markdown>
+      <div className="pb-10"></div>
 
       <hr className="divider" />
 

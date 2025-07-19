@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import CustomButton from "./CustomButton";
-import { Project, User } from "../sanity.types"
+import { Project, User } from "../sanity.types";
+import Markdown from 'react-markdown';
 
 export type MyWorkType = Omit<Project, "user"> & { user?: User };
 
@@ -33,7 +34,9 @@ const { _id, description, image, title, copy } = projectPost;
                     <h5 className="mt-4">{description}</h5>
 
                     <p className="mt-4 md:max-w-full text-xl">
-                      {copy}
+                      <Markdown>
+                        {copy}
+                      </Markdown>
                     </p>
 
                     <Link href={`/project/${_id}`}>
