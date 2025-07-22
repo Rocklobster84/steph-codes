@@ -61,6 +61,9 @@
   .section_container li {
     @apply list-disc;
   }
+  .section_container div a {
+    @apply text-black
+  }
   .category-tag {
     @apply font-medium text-[16px] bg-accent-light text-black px-4 py-2 rounded-full;
   }
@@ -70,13 +73,6 @@
   .skeleton.circle {
     @apply rounded-full; 
   }
-  .project-card {
-    @apply bg-accent text-black border-[5px] border-accent-light py-6 px-5 rounded-md
-  }
-  .project-card_desc {
-    @apply font-normal text-[16px] line-clamp-2 my-3 break-all;
-  }
-
   .card_grid-sm {
     @apply grid sm:grid-cols-2 gap-5;
   }

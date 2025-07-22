@@ -26,7 +26,9 @@ export const PROJECT_BY_ID_QUERY = defineQuery(`*[_type == "project" && _id == $
   description, 
   category, 
   image,
-  copy
+  copy,
+  button2, 
+  button2Link
 }`)
 
 export const PLAYLIST_BY_SLUG_QUERY =
@@ -50,5 +52,7 @@ export const PLAYLIST_BY_SLUG_QUERY =
     description,
     category,
     image,
+    button2, 
+    button2Link
   }
 }`);
