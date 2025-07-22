@@ -38,5 +38,13 @@ export const project = defineType ({
       name: 'image',
       type: 'url',
     }),
+    defineField({
+      name: 'button2',
+      type: 'string'
+    }),
+    defineField({
+      name: 'button2Link',
+      type: 'url'
+    }),
   ],
 })

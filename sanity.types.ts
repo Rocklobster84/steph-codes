@@ -48,6 +48,8 @@ export type Project = {
   category?: string;
   copy?: string;
   image?: string;
+  button2?: string;
+  button2Link?: string;
 };
 
 export type User = {
