@@ -12,7 +12,9 @@ export const PROJECTS_QUERY = defineQuery(`*[_type == "project" && defined(slug.
   description, 
   category, 
   copy,
-  image
+  image,
+  button2,
+  button2Link
 }`);
 
 export const PROJECT_BY_ID_QUERY = defineQuery(`*[_type == "project" && _id == $id][0] {

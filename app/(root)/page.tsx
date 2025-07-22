@@ -12,7 +12,7 @@ export default async function Home() {
       <Hero />
       <section id="my-work">
       <MyWorkHeading />
-        
+        <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch max-w-3/4 sm:max-w-3/4 md:max-w-3/4 lg:max-w-2/3 mx-auto">
           {projectPosts?.length > 0 ? (
             projectPosts.map(( projectPost: MyWorkType ) => (
               <MyWork key={projectPost?._id} projectPost={projectPost} />
@@ -20,7 +20,7 @@ export default async function Home() {
           ) : (
             <p className="no-results">No projects found</p>
           )}
-        
+        </div>
       </section>
       <SanityLive />
 
