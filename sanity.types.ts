@@ -187,7 +187,7 @@ export type AllSanitySchemaTypes = Playlist | Project | User | SanityImagePalett
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc)[0...3] {  _id,   _type,  _updatedAt,  _rev,  title,   slug,   _createdAt,   user,   description,   category,   copy,  image}
+// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc)[0...3] {  _id,   _type,  _updatedAt,  _rev,  title,   slug,   _createdAt,   user,   description,   category,   copy,  image,  button2,  button2Link}
 export type PROJECTS_QUERYResult = Array<{
   _id: string;
   _type: "project";
@@ -206,9 +206,11 @@ export type PROJECTS_QUERYResult = Array<{
   category: string | null;
   copy: string | null;
   image: string | null;
+  button2: string | null;
+  button2Link: string | null;
 }>;
 // Variable: PROJECT_BY_ID_QUERY
-// Query: *[_type == "project" && _id == $id][0] {  _id,   title,   slug,   _createdAt,   user,   description,   category,   image,  copy}
+// Query: *[_type == "project" && _id == $id][0] {  _id,   title,   slug,   _createdAt,   user,   description,   category,   image,  copy,  button2,   button2Link}
 export type PROJECT_BY_ID_QUERYResult = {
   _id: string;
   title: string | null;
@@ -224,6 +226,8 @@ export type PROJECT_BY_ID_QUERYResult = {
   category: string | null;
   image: string | null;
   copy: string | null;
+  button2: string | null;
+  button2Link: string | null;
 } | null;
 // Variable: PLAYLIST_BY_SLUG_QUERY
 // Query: *[_type == "playlist" && slug.current == $slug][0]{  _id,  title,  slug,  select[]->{    _id,    _createdAt,    title,    slug,    user->{      _id,      name,      slug,      image,      bio    },    views,    description,    category,    image,  }}
@@ -254,8 +258,8 @@ export type PLAYLIST_BY_SLUG_QUERYResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"project\" && defined(slug.current)] | order(_createdAt desc)[0...3] {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image\n}": PROJECTS_QUERYResult;
-    "*[_type == \"project\" && _id == $id][0] {\n  _id, \n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  image,\n  copy\n}": PROJECT_BY_ID_QUERYResult;
+    "*[_type == \"project\" && defined(slug.current)] | order(_createdAt desc)[0...3] {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image,\n  button2,\n  button2Link\n}": PROJECTS_QUERYResult;
+    "*[_type == \"project\" && _id == $id][0] {\n  _id, \n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  image,\n  copy,\n  button2, \n  button2Link\n}": PROJECT_BY_ID_QUERYResult;
     "*[_type == \"playlist\" && slug.current == $slug][0]{\n  _id,\n  title,\n  slug,\n  select[]->{\n    _id,\n    _createdAt,\n    title,\n    slug,\n    user->{\n      _id,\n      name,\n      slug,\n      image,\n      bio\n    },\n    views,\n    description,\n    category,\n    image,\n  }\n}": PLAYLIST_BY_SLUG_QUERYResult;
   }
 }
