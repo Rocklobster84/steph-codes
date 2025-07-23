@@ -26,9 +26,10 @@ export const project = defineType ({
       type: 'text',
     }),
     defineField({
-      name: 'category',
-      type: 'string',
-      validation: (Rule) => Rule.min(1).max(20).required().error("Please enter a category")
+      name: "category",
+      title: "Category",
+      type: "array",
+      of: [{ type: "string" }]
     }),
     defineField({
       name: 'copy',

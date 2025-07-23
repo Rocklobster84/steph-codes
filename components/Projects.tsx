@@ -1,23 +1,22 @@
 "use client";
 
-import { Project, User } from "../sanity.types";
+import { MyWorkType } from "./MyWork";
 
-export type MyWorkType = Omit<Project, "user"> & { user?: User };
-
-const MyWork = ({ projectPost }: { projectPost: MyWorkType}) => {
+const Projects = ({ projectPost }: { projectPost: MyWorkType}) => {
 
 const { _id, description, image, title, button2, button2Link } = projectPost;
 
   return (
     <>  
+  
     <div className="py-4 flex justify-center">
       <div className="w-full max-w-sm bg-accent rounded-lg border border-gray-200 shadow-md">
         <div className="flex flex-col items-center pt-4 pb-10">
           <img src={image} alt={title} className="object-contain w-full h-auto aspect-[2.1]" />
-            <h5 className="mb-1 text-xl font-medium text-black pt-4">
+            <h5 className="mb-1 text-center text-xl font-medium text-black pt-4">
               {title}
             </h5>
-            <span className="text-sm text-accent-dark text-center">
+            <span className="text-sm text-accent-dark text-center px-4">
               {description}
             </span>
             <div className="flex mt-4 space-x-3 md:mt-6">
@@ -37,4 +36,4 @@ const { _id, description, image, title, button2, button2Link } = projectPost;
   );
 }
 
-export default MyWork;
+export default Projects;
