@@ -2,6 +2,8 @@ import { Hero, MyWorkHeading, Experience, About, HireMe } from "@/components";
 import MyWork, { MyWorkType } from '@/components/MyWork';
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
+import Link from "next/link";
+import CustomButton from "@/components/CustomButton";
 
 export default async function Home() {
 
@@ -20,6 +22,15 @@ export default async function Home() {
           ) : (
             <p className="no-results">No projects found</p>
           )}
+        </div>
+        <div className="flex max-w-3/4 sm:max-w-3/4 md:max-w-3/4 lg:max-w-2/3 justify-center mx-auto">
+          <Link href={`/projects`}>
+            <CustomButton
+              title="View All Projects"
+              btnType="button"
+              containerStyles="text-white text-sm rounded-sm bg-neutral-500 min-w-[80px] px-3 py-3 hover:bg-accent"
+            />
+          </Link>  
         </div>
       </section>
       <SanityLive />

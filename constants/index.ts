@@ -107,3 +107,11 @@
       alt: "My attendee badge from the Commit Your Code Conference in Plano, Texas"
     },
   ]
+
+  export const categories = [
+      "Website",
+      "Application",
+      "Mobile App",
+      "AI/ML",
+      "Workshop"
+  ]
