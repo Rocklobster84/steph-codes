@@ -16,21 +16,6 @@ const [email, setEmail] = useState("");
 const [emailError] = useState("");
 const [message, setMessage] = useState("");
 const [messageError] = useState("");
-const [isSubmitting, setIsSubmitting] = useState(false);
-
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-
-  try {
-    // Simulate async submit (e.g. API call)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Clear fields, show success, etc.
-  } finally {
-    setIsSubmitting(false);
-  }
-};
 
   return (
 
@@ -38,8 +23,6 @@ const handleSubmit = async (e: React.FormEvent) => {
       <FormCard
         title="Contact Me"
         description="I usually reply within 24 hours."
-        submitting={isSubmitting}
-        onSubmit={handleSubmit}  
       >
       <FieldRow>
         <div className="flex flex-col w-full">

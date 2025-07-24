@@ -19,7 +19,7 @@ const ImageGallery = ({ photos }: PhotoProps) => {
             src={src}
             alt={alt}
             fill
-            className="rounded-lg scale-100 hover:scale-200 transform transition-transform hover:z-50"
+            className="rounded-lg scale-100 hover:scale-400 transform transition-transform hover:z-800"
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 768px) 100vw, (max-width: 1024) 50vw, 25vw"
           />
