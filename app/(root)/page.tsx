@@ -38,6 +38,12 @@ export default async function Home() {
       <Experience />
       <About />
       <HireMe />
+      <form name="contact" netlify hidden>
+        <input type="text" name="first" />
+        <input type="text" name="last" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+      </form>
     </main>
   );
 }
