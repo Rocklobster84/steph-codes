@@ -29,6 +29,7 @@ const [messageError] = useState("");
         <FormLabel htmlFor="first">First Name</FormLabel>
         <TextInput
           id="first"
+          name="first"
           type="text"
           value={first}
           onChange={(e) => setFirst(e.target.value)}
@@ -40,6 +41,7 @@ const [messageError] = useState("");
         <FormLabel htmlFor="last">Last Name</FormLabel>
         <TextInput
           id="last"
+          name="last"
           type="text"
           value={last}
           onChange={(e) => setLast(e.target.value)}
@@ -51,6 +53,7 @@ const [messageError] = useState("");
       <FormLabel htmlFor="email">Email Address</FormLabel>
       <TextInput
         id="email"
+        name="email"
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -60,6 +63,7 @@ const [messageError] = useState("");
       <FormLabel htmlFor="Comments">Comments</FormLabel>
       <TextArea
         id="message"
+        name="message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         rows={5}
