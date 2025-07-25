@@ -1,12 +1,21 @@
 "use client";
 
-const ContactForm = () => {
-
+export function ContactForm() {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    await fetch("/__forms.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    });
+    // Success and error handling ...
+  };
   return (
     <>
       <div className="flex justify-center mt-10">
 
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="w-full max-w-xl rounded-xl border border-gray-500 bg-neutral-900 p-6 shadow-lg justify-center">
+        <form name="contact" method="POST" onSubmit={handleFormSubmit} netlify-honeypot="bot-field" className="w-full max-w-xl rounded-xl border border-gray-500 bg-neutral-900 p-6 shadow-lg justify-center">
 
           <input type="hidden" name="form-name" value="contact" />
           <p className="hidden">
@@ -80,5 +89,3 @@ const ContactForm = () => {
     </>
   )
 }
-
-export default ContactForm
