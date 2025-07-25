@@ -1,3 +1,4 @@
-import netlifyMiddleware from '@netlify/next';
+import { netlifyMiddleware } from '@netlify/next';
 
-export const middleware = netlifyMiddleware;
+export default netlifyMiddleware;
+
