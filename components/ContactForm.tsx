@@ -6,7 +6,7 @@ const ContactForm = () => {
     <>
       <div className="flex justify-center mt-10">
 
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="w-full max-w-xl rounded-xl border border-gray-500 bg-neutral-900 p-6 shadow-lg justify-center">
+        <form name="hire" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="w-full max-w-xl rounded-xl border border-gray-500 bg-neutral-900 p-6 shadow-lg justify-center">
 
           <input type="hidden" name="form-name" value="contact" />
           <p className="hidden">
@@ -24,7 +24,7 @@ const ContactForm = () => {
                 <div className="flex-1 flex flex-col"> 
                   <div className="flex flex-col w-full">
 
-                    <label for="first name" className="mb-1 flex items-center gap-1 cursor-pointer text-white-700 transition-colors duration-200 focus-visible:bg-accent peer-focus:bg-accent-hover">
+                    <label htmlFor="first name" className="mb-1 flex items-center gap-1 cursor-pointer text-white-700 transition-colors duration-200 focus-visible:bg-accent peer-focus:bg-accent-hover">
                       <span>First Name</span>
                     </label>
 
@@ -38,7 +38,7 @@ const ContactForm = () => {
                 <div className="flex-1 flex flex-col"> 
                   <div className="flex flex-col w-full">
 
-                    <label for="last name" className="mb-1 flex items-center gap-1 cursor-pointer text-white-700 transition-colors duration-200 focus-visible:bg-accent peer-focus:bg-accent-hover">
+                    <label htmlFor="last name" className="mb-1 flex items-center gap-1 cursor-pointer text-white-700 transition-colors duration-200 focus-visible:bg-accent peer-focus:bg-accent-hover">
                       <span>Last Name</span>
                     </label>
 
@@ -51,14 +51,14 @@ const ContactForm = () => {
 
               </div>
       
-              <label for="email" className="mb-1 flex items-center gap-1 cursor-pointer text-white-700 transition-colors duration-200 focus-visible:bg-accent peer-focus:bg-accent-hover">
+              <label htmlFor="email" className="mb-1 flex items-center gap-1 cursor-pointer text-white-700 transition-colors duration-200 focus-visible:bg-accent peer-focus:bg-accent-hover">
                 <span>Email</span>
               </label>
               <div className="flex flex-col gap-1">
                 <input type="text" id="email" name="email" className="peer w-full rounded-md border px-3 py-2 shadow-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 disabled:opacity-50 border-gray-300 focus-visible:ring-blue-600"/>
               </div>
       
-              <label for="message" className="mb-1 flex items-center gap-1 cursor-pointer text-white-700 transition-colors duration-200 focus-visible:bg-accent peer-focus:bg-accent-hover">
+              <label htmlFor="message" className="mb-1 flex items-center gap-1 cursor-pointer text-white-700 transition-colors duration-200 focus-visible:bg-accent peer-focus:bg-accent-hover">
                 <span>Message</span>
               </label>
               <div className="flex flex-col gap-1">
