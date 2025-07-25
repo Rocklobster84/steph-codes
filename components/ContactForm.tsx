@@ -6,7 +6,7 @@ const ContactForm = () => {
     <>
       <div className="flex justify-center mt-10">
 
-        <form name="hire" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="w-full max-w-xl rounded-xl border border-gray-500 bg-neutral-900 p-6 shadow-lg justify-center">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="w-full max-w-xl rounded-xl border border-gray-500 bg-neutral-900 p-6 shadow-lg justify-center">
 
           <input type="hidden" name="form-name" value="contact" />
           <p className="hidden">
