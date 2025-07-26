@@ -74,7 +74,7 @@
     @apply rounded-full; 
   }
   .card_grid-sm {
-    @apply grid sm:grid-cols-2 gap-5;
+    @apply grid sm:grid-cols-3 gap-7;
   }
 }
 html {

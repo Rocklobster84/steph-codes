@@ -7,6 +7,7 @@ import Skeleton from '@/components/ui/Skeleton';
 import { MyWorkType } from '@/components/MyWork';
 import Markdown from 'react-markdown';
 import YouMayAlsoLike from '@/components/YouMayAlsoLike';
+import { getRandomItems } from '@/utils';
 
 export const experimental_ppr = true;
 
@@ -16,9 +17,11 @@ const Page = async ({ params }: { params: Promise<{ id: string }>}) => {
   const [projectPost, { select: Websites }] = await Promise.all([
     client.fetch(PROJECT_BY_ID_QUERY, { id }),
     client.fetch(PLAYLIST_BY_SLUG_QUERY, {
-      slug: "websites",
+      slug: "you-may-also-like",
     }),
   ]);
+
+  const randomWebsites = Websites ? getRandomItems(Websites, 3) : [];   
 
   if(!projectPost) return notFound();
 
@@ -46,12 +49,12 @@ const Page = async ({ params }: { params: Promise<{ id: string }>}) => {
 
       <hr className="divider" />
 
-      {Websites?.length > 0 && (
+      {randomWebsites?.length > 0 && (
         <div className="max-w-4xl mx-auto">
           <h3 className="mt-12 mb-12">You May Also Like</h3>
 
           <div className="mt-7 card_grid-sm">
-            {Websites.map((projectPost: MyWorkType, i: number) => (
+            {randomWebsites.map((projectPost: MyWorkType, i: number) => (
               <YouMayAlsoLike key={i} projectPost={projectPost} />
           ))}
           </div>

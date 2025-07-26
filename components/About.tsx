@@ -50,7 +50,7 @@ const About = () => {
               My career path has been anything but linear. I started out as a self-taught developer and later earned my B.S. in Computer Science. Before moving into tech full-time, I worked in law, real estate, marketing, and even screen printing. These varied experiences give me a unique point of view and a practical mindset that I bring to every project. I also spent time volunteering with Women Who Code—before its dissolution—supporting a more inclusive future in tech.
             </p>
             <p className="mb-6">
-              When I&#39;m not at my keyboard, I&#39;m probably behind a camera. Feel free to explore some of my photography on the Photography page. I also have an excessive number of pets, including a nearly 40-year-old three-toed box turtle. And if you&#39;re really curious, ask me about the band I used to be in—we may not have been the best, but we definitely had fun.
+              When I&#39;m not at my keyboard, I&#39;m probably behind a camera. I also have an excessive number of pets, including a nearly 40-year-old three-toed box turtle. And if you&#39;re really curious, ask me about the band I used to be in—we may not have been the best, but we definitely had fun.
             </p>
             <p className="mb-6">
               I&#39;m currently open to both contract and full-time opportunities — feel free to reach out!
