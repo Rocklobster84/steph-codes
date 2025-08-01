@@ -26,6 +26,9 @@ export default function Navbar() {
           <Link href="/#about">
             <span className="px-5">About</span>
           </Link>
+          <Link href="/photography">
+            <span className="px-5">Photography</span>
+          </Link>
           <Link href="/#hire-me">
             <CustomButton
               title="Hire Me"
@@ -49,6 +52,9 @@ export default function Navbar() {
           </Link>
           <Link href="/#about">
             <span className="px-5 text-lg text-white-600 block">About</span>
+          </Link>
+          <Link href="/photography">
+            <span className="px-5">Photography</span>
           </Link>
           <Link href="/#hire-me">
             <span className="px-5 text-lg text-white-600 block">Hire Me</span>

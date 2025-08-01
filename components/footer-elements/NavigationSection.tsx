@@ -19,6 +19,9 @@ export const NavigationSection = () => {
       <Link href="/#about">
         About
       </Link>
+      <Link href="/photography">
+        <span className="px-5">Photography</span>
+      </Link>
       <Link href="/#hire-me">
         <CustomButton
               title="Hire Me"

@@ -88,3 +88,23 @@ export const CATEGORIES_QUERY = defineQuery(`*[_type == "project" && (!$category
 export const CATEGORY_LIST_QUERY = defineQuery(`
   *[_type == "project" && defined(category)].category
 `);
+
+export const GALLERY_QUERY = `*[_type == "gallery"][0]{
+  _id,
+  title,
+  description,
+  images[]{
+    asset->{
+      url,
+      metadata {
+        lqip,
+        dimensions {
+          width,
+          height
+        }
+      }
+    },
+    alt,
+    caption
+  }
+}`
