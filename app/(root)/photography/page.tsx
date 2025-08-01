@@ -60,6 +60,7 @@ const breakpointColumnsObj = {
 
   return (
     <>
+    <h1>Photography</h1>
 <Masonry
   breakpointCols={breakpointColumnsObj}
   className="flex w-auto gap-4"
