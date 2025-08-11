@@ -4,6 +4,7 @@ import "./globals.css";
 import "easymde/dist/easymde.min.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/footer-elements/Footer"
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const montserrat = Montserrat({
   variable: "--font-montserrat-sans",
@@ -17,7 +18,7 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: "Portfolio | Stephanie Thompson, Web Application Engineer",
-  description: "Steph codes is the portfolio website for Stephanie Thompson.",
+  description: "Steph Codes is the portfolio website for Stephanie Thompson.",
 };
 
 export default function RootLayout({
@@ -34,6 +35,8 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      <GoogleTagManager gtmId="GTM-TLCX6LQN"/>
+      <GoogleAnalytics gaId="G-7LV20PFXZM" />
     </html>
   );
 }
