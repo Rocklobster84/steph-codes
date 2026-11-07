@@ -86,6 +86,7 @@ export type Project = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  projectDate?: string;
   user?: {
     _ref: string;
     _type: "reference";
@@ -235,7 +236,7 @@ export type AllSanitySchemaTypes = Gallery | Photo | Playlist | Project | User |
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc)[0...3] {  _id,   _type,  _updatedAt,  _rev,  title,   slug,   _createdAt,   user,   description,   category,   copy,  image,  button2,  button2Link}
+// Query: *[_type == "project" && defined(slug.current)] | order(coalesce(projectDate, _createdAt) desc)[0...3] {  _id,   _type,  _updatedAt,  _rev,  title,   slug,   _createdAt,   user,   description,   category,   copy,  image,  button2,  button2Link}
 export type PROJECTS_QUERYResult = Array<{
   _id: string;
   _type: "project";
@@ -258,7 +259,7 @@ export type PROJECTS_QUERYResult = Array<{
   button2Link: string | null;
 }>;
 // Variable: PROJECTS_PAGE_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {  _id,   _type,  _updatedAt,  _rev,  title,   slug,   _createdAt,   user,   description,   category,   copy,  image,  button2,  button2Link}
+// Query: *[_type == "project" && defined(slug.current)] | order(coalesce(projectDate, _createdAt) desc) {  _id,   _type,  _updatedAt,  _rev,  title,   slug,   _createdAt,   user,   description,   category,   copy,  image,  button2,  button2Link}
 export type PROJECTS_PAGE_QUERYResult = Array<{
   _id: string;
   _type: "project";
@@ -281,12 +282,12 @@ export type PROJECTS_PAGE_QUERYResult = Array<{
   button2Link: string | null;
 }>;
 // Variable: PROJECT_BY_ID_QUERY
-// Query: *[_type == "project" && _id == $id][0] {  _id,   title,   slug,   _createdAt,   user,   description,   category,   image,  copy,  button2,   button2Link}
+// Query: *[_type == "project" && _id == $id][0] {  _id,  title,  slug,  projectDate,  user,   description,   category,   image,  copy,  button2,   button2Link}
 export type PROJECT_BY_ID_QUERYResult = {
   _id: string;
   title: string | null;
   slug: Slug | null;
-  _createdAt: string;
+  projectDate: string | null;
   user: {
     _ref: string;
     _type: "reference";
@@ -351,9 +352,9 @@ export type CATEGORY_LIST_QUERYResult = Array<Array<string> | null>;
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"project\" && defined(slug.current)] | order(_createdAt desc)[0...3] {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image,\n  button2,\n  button2Link\n}": PROJECTS_QUERYResult;
-    "*[_type == \"project\" && defined(slug.current)] | order(_createdAt desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image,\n  button2,\n  button2Link\n}": PROJECTS_PAGE_QUERYResult;
-    "*[_type == \"project\" && _id == $id][0] {\n  _id, \n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  image,\n  copy,\n  button2, \n  button2Link\n}": PROJECT_BY_ID_QUERYResult;
+    "*[_type == \"project\" && defined(slug.current)] | order(coalesce(projectDate, _createdAt) desc)[0...3] {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image,\n  button2,\n  button2Link\n}": PROJECTS_QUERYResult;
+    "*[_type == \"project\" && defined(slug.current)] | order(coalesce(projectDate, _createdAt) desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  copy,\n  image,\n  button2,\n  button2Link\n}": PROJECTS_PAGE_QUERYResult;
+    "*[_type == \"project\" && _id == $id][0] {\n  _id,\n  title,\n  slug,\n  projectDate,\n  user, \n  description, \n  category, \n  image,\n  copy,\n  button2, \n  button2Link\n}": PROJECT_BY_ID_QUERYResult;
     "*[_type == \"playlist\" && slug.current == $slug][0]{\n  _id,\n  title,\n  slug,\n  select[]->{\n    _id,\n    _createdAt,\n    title,\n    slug,\n    user->{\n      _id,\n      name,\n      slug,\n      image,\n      bio\n    },\n    views,\n    description,\n    category,\n    image,\n    button2, \n    button2Link\n  }\n}": PLAYLIST_BY_SLUG_QUERYResult;
     "*[_type == \"project\" && (!$category || $category in category)] | order(_createdAt desc) {\n  _id, \n  title, \n  slug, \n  _createdAt, \n  user, \n  description, \n  category, \n  image\n}": CATEGORIES_QUERYResult;
     "\n  *[_type == \"project\" && defined(category)].category\n": CATEGORY_LIST_QUERYResult;

@@ -420,6 +420,13 @@
         },
         "optional": true
       },
+      "projectDate": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "user": {
         "type": "objectAttribute",
         "value": {

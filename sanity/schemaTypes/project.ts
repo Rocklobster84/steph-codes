@@ -17,6 +17,12 @@ export const project = defineType ({
       }
     }),
     defineField({
+      name: 'projectDate',
+      title: 'Project Date',
+      type: 'date',
+      description: 'When the work was done. Shown as month and year on the project page and used to sort projects.',
+    }),
+    defineField({
       name: 'user',
       type: 'reference',
       to: { type: 'user' }
