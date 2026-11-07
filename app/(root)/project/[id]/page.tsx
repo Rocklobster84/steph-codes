@@ -28,7 +28,9 @@ const Page = async ({ params }: { params: Promise<{ id: string }>}) => {
   return (
     <>
     <section className="bg-accent !min-h-[230px] w-full py-10">
-      <p className="tag text-center mx-auto w-40">{formatDate(projectPost?._createdAt)}</p>
+      {projectPost.projectDate && (
+        <p className="tag text-center mx-auto w-40">{formatDate(projectPost.projectDate)}</p>
+      )}
         <div className="flex justify-center">
           <h1 className="heading mx-auto">{projectPost.title}</h1>
         </div>
